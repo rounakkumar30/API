@@ -1,0 +1,29 @@
+[
+    {
+        "model": "apps.app",
+        "pk": 1,
+        "fields": {
+            "app_name": "ChatX",
+            "version": "1.0.0",
+            "description": "A real-time chat application."
+        }
+    },
+    {
+        "model": "apps.app",
+        "pk": 2,
+        "fields": {
+            "app_name": "WeatherNow",
+            "version": "2.3.1",
+            "description": "Live weather updates and forecasts."
+        }
+    },
+    {
+        "model": "apps.app",
+        "pk": 3,
+        "fields": {
+            "app_name": "TaskBuddy",
+            "version": "0.9.5",
+            "description": "A simple to-do list and task manager."
+        }
+    }
+]

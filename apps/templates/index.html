@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App Manager API - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .endpoint {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .method {
+            font-weight: bold;
+            color: green;
+        }
+        .delete {
+            color: red;
+        }
+        .get {
+            color: blue;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📱 App Manager API</h1>
+    <p>This API allows you to Add, View, and Delete App details.</p>
+
+    <div class="endpoint">
+        <p class="method">POST ➤ <a href="/add-app">/add-app</a></p>
+        <p><strong>Description:</strong> Add new app details</p>
+        <p><strong>Request Body:</strong></p>
+        <pre>
+{
+    "app_name": "Sample App",
+    "version": "1.0.0",
+    "description": "Description of app"
+}
+        </pre>
+    </div>
+
+    <div class="endpoint">
+        <p class="method get">GET ➤ <a href="/get-app/1">/get-app/&lt;id&gt;</a></p>
+        <p><strong>Description:</strong> Retrieve app details by ID</p>
+        <p><strong>Example:</strong> <code>/get-app/1</code></p>
+    </div>
+
+    <div class="endpoint">
+        <p class="method delete">DELETE ➤ <a href="/delete-app/1">/delete-app/&lt;id&gt;</a></p>
+        <p><strong>Description:</strong> Delete app details by ID</p>
+        <p><strong>Example:</strong> <code>/delete-app/1</code></p>
+    </div>
+
+</body>
+</html>
