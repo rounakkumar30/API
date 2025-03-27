@@ -1,153 +1,226 @@
-📄 Python Intern Assignment - App Manager API & Android Simulation
-By: Rounak
 
-📌 Overview
-This project consists of four tasks as part of a Python development assessment. It includes backend API development, database management, Android system simulation, and basic networking.
 
-🗂️ Project Structure
-pgsql
-Copy
-Edit
+# 📄 Python Intern Assignment
+
+**Candidate:** Rounak  
+**Assignment:** Python Backend, Database, Virtual Android System & Networking
+
+---
+
+## 📝 Table of Contents
+
+- [Overview](#overview)
+- [Folder Structure](#folder-structure)
+- [Task 1 - Backend Development](#task-1---backend-development)
+- [Task 2 - Database Management](#task-2---database-management)
+- [Task 3 - Virtual Android System Simulation](#task-3---virtual-android-system-simulation)
+- [Task 4 - Basic Networking](#task-4---basic-networking)
+- [Requirements](#requirements)
+- [How to Run](#how-to-run)
+- [Submission Structure](#submission-structure)
+
+---
+
+## 🚀 Overview
+
+This repository contains solutions for the Python Internship Assignment consisting of:
+
+✅ REST API using Django  
+✅ SQLite Database Integration  
+✅ Virtual Android System Simulation  
+✅ Networking script to connect virtual system with API
+
+---
+
+## 📂 Folder Structure
+
+```
 Rounak_PythonInternAssignment/
-├── app_manager/
-│   ├── app_manager/
-│   │   ├── asgi.py
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│   ├── apps/
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── urls.py
-│   │   ├── views.py
-│   │   ├── sample_data.sql
-│   │   ├── sample_data.json
-│   │   └── templates/
-│   │       └── home.html
-│   └── db.sqlite3
+├── app_manager/                     # Task 1 & Task 2
+│   ├── app_manager/                 # Django project files
+│   ├── apps/                        # Django app files
+│   │   ├── templates/               # Home page HTML
+│   │   ├── sample_data.sql          # Sample data SQL
+│   │   ├── sample_data.json         # Sample data JSON
+│   │   ├── models.py                # Database model
+│   │   ├── serializers.py           # DRF serializers
+│   │   ├── views.py                 # API Views
+│   │   └── urls.py                  # API URLs
+│   └── db.sqlite3                   # SQLite Database
 │
-├── virtual_android/
+├── virtual_android/                 # Task 3
 │   └── scripts/
-│       └── virtual_android.py
+│       └── virtual_android.py       # Android System Simulation
 │
-├── networking/
-│   └── send_device_info.py
+├── networking/                      # Task 4
+│   └── send_device_info.py          # Networking Script
 │
-├── requirements.txt
-└── README.md
-🚀 Task 1: Backend Development (Django REST API)
-🔗 API Endpoints
-Method	Endpoint	Description
-POST	/add-app/	Add new app details
-GET	/get-app/{id}/	Retrieve app details by ID
-DELETE	/delete-app/{id}/	Delete app details by ID
-Home Page:
-Visit: http://127.0.0.1:8000/
-The home page contains information and clickable links to all API endpoints.
+├── requirements.txt                 # Project dependencies
+└── README.md                        # Instructions
+```
 
-📝 API Setup
-Create Virtual Environment:
+---
 
-bash
-Copy
-Edit
-python -m venv venv
-venv\Scripts\activate  # For Windows
-source venv/bin/activate  # For Mac/Linux
-Install Dependencies:
+## 🟢 Task 1 - Backend Development
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run Migrations:
+A Django REST API to manage app details.
 
-bash
-Copy
-Edit
-cd app_manager
-python manage.py migrate
-Run the Server:
+### Endpoints
 
-bash
-Copy
-Edit
-python manage.py runserver
-🗃️ Task 2: Database Management
-Database: SQLite
+| Method | Endpoint             | Description                     |
+|:-----:|:--------------------:|:-------------------------------:|
+| POST | `/add-app/`          | Add new app details            |
+| GET  | `/get-app/{id}/`     | Retrieve app details by ID     |
+| DELETE | `/delete-app/{id}/` | Delete app by ID               |
 
-File: app_manager/db.sqlite3
+### API Home Page
 
-Schema: Defined in apps/models.py
+Access via:  
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-🔄 Load Sample Data:
-You can load the sample data using:
+This page provides clickable links and documentation.
 
-bash
-Copy
-Edit
+---
+
+## 🗃️ Task 2 - Database Management
+
+- **Database:** SQLite (File: `db.sqlite3`)
+- **Schema:** Defined in `apps/models.py`
+- **Sample Data:**  
+  - `sample_data.sql`
+  - `sample_data.json`
+
+You can load sample data using:
+
+```bash
 sqlite3 db.sqlite3 < apps/sample_data.sql
-(If using PowerShell, run in Git Bash or Command Prompt as < operator is not supported in PowerShell)
+```
 
-🤖 Task 3: Virtual Android System Simulation
-Python script simulating an Android environment and system information.
+(Use Command Prompt or Bash for redirection)
 
-📄 File:
-virtual_android/scripts/virtual_android.py
+---
 
-🔥 Features:
-Simulates Android System
+## 🤖 Task 3 - Virtual Android System Simulation
 
-Displays Terminal
+**Script:** `virtual_android/scripts/virtual_android.py`
 
-Installs Sample App
+### Features
 
-Retrieves & Logs System Info
+- Creates a virtual Android environment (Simulated)
+- Displays terminal-like interface
+- Installs a sample app
+- Retrieves and logs:
+  - OS Version
+  - Device Model
+  - Available Memory
 
-▶️ Run:
-bash
-Copy
-Edit
+### How to Run
+
+```bash
 python virtual_android/scripts/virtual_android.py
-🌐 Task 4: Basic Networking
-Python script to establish HTTP connection & send device info to backend.
+```
 
-📄 File:
-networking/send_device_info.py
+### Sample System Info (Logged)
 
-🔥 Features:
-Sends mock Android data (Device ID, OS Info) to /add-app/ API
+```
+Device Model: VirtualPhone X1
+OS Version: Android 11 (Simulated)
+Available Memory: 4096 MB
+Sample App Installed: ChatApp.apk
+```
 
-Logs server response
+---
 
-▶️ Run:
-Make sure Django server is running and then:
+## 🌐 Task 4 - Basic Networking
 
-bash
-Copy
-Edit
+**Script:** `networking/send_device_info.py`
+
+### Functionality
+
+- Establishes HTTP connection with backend API (`/add-app/`)
+- Sends mock Android device data
+- Receives and logs server response
+
+### How to Run
+
+Ensure Django server is running:
+
+```bash
+python app_manager/manage.py runserver
+```
+
+Then execute:
+
+```bash
 python networking/send_device_info.py
-✅ Requirements
-All dependencies are listed in requirements.txt
+```
 
-shell
-Copy
-Edit
+### How it Works
+
+The script collects simulated system info and makes a **POST request** to the API endpoint `/add-app/`. The server response is logged to the console.
+
+---
+
+## 📥 Requirements
+
+Dependencies listed in `requirements.txt`:
+
+```
 Django>=3.0
 djangorestframework
 requests
-Install using:
+```
 
-bash
-Copy
-Edit
+Install:
+
+```bash
 pip install -r requirements.txt
-📥 Submission Guidelines
-All code files are provided in this repository.
+```
 
-Proper documentation and comments added in the code.
+---
 
-Folder name: Rounak_PythonInternAssignment
+## ⚙️ How to Run (Quick Guide)
+
+1. **Clone & Navigate**
+
+```bash
+git clone https://github.com/your-repo/Rounak_PythonInternAssignment.git
+cd Rounak_PythonInternAssignment
+```
+
+2. **Create Virtual Environment (Optional)**
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\activate     # Windows
+```
+
+3. **Install Dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+4. **Run API**
+
+```bash
+cd app_manager
+python manage.py migrate
+python manage.py runserver
+```
+
+5. **Run Android Simulation**
+
+```bash
+python virtual_android/scripts/virtual_android.py
+```
+
+6. **Run Networking Script**
+
+```bash
+python networking/send_device_info.py
+```
+
+---
 
